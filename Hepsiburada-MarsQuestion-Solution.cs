@@ -19,7 +19,7 @@ namespace HbCaseStudy
             Console.ReadLine();
         }
 
-        public static void Direct(string firstPosition, string moves)
+        private static void Direct(string firstPosition, string moves)
         {
             RoverPosition roverPosition = new RoverPosition();
             firstPosition = firstPosition.Replace(" ", "");
@@ -48,19 +48,18 @@ namespace HbCaseStudy
         }
 
         // c# ın mod için operatoru tam çalışmıyor onun yerine internetden aşağıdaki çözümü aldım(negative sayılar için doğru sonuç vermiyor.)
-
-        public static void ToLeft(RoverPosition roverPosition)
+        private static void ToLeft(RoverPosition roverPosition)
         {
             roverPosition.Compass--;
             //roverPosition.Compass = roverPosition.Compass % 4;
             roverPosition.Compass = (roverPosition.Compass % 4 + 4) % 4;
         }
-        public static void ToRight(RoverPosition roverPosition)
+        private static void ToRight(RoverPosition roverPosition)
         {
             roverPosition.Compass++;
             roverPosition.Compass = roverPosition.Compass % 4;
         }
-        public static void Goforward(RoverPosition roverPosition)
+        private static void Goforward(RoverPosition roverPosition)
         {
             if (roverPosition.Compass.ToString() == "0")
             {
@@ -81,7 +80,7 @@ namespace HbCaseStudy
         }
 
         // burda rover ın ilk durduğu yerin objeye ataması yapıldı.
-        public static void setRoverPosition(RoverPosition roverPosition, string firstPosition)
+        private static void setRoverPosition(RoverPosition roverPosition, string firstPosition)
         {
             if (firstPosition.Length < 3)
             {
